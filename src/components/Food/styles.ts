@@ -1,8 +1,13 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+    available: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   background: #f0f0f5;
   border-radius: 8px;
+  
 
   header {
     background: #ffb84d;
@@ -16,7 +21,8 @@ export const Container = styled.div`
     !props.available &&
     css`
         opacity: 0.3;
-      `};
+      `}; 
+    
 
     img {
       pointer-events: none;
